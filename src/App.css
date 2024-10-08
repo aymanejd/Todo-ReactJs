@@ -1,0 +1,250 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  margin-top: 100px;
+  width: 450px;
+}
+
+.App .input {
+  background-color: hsl(235, 24%, 19%);
+  height: 70px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 15px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.App .input input {
+  width: 75%;
+  outline: none;
+  padding: 0 4px;
+  height: 100%;
+  border: 1px solid gray;
+  border-color: transparent transparent hsl(233, 14%, 35%);
+  background-color: transparent;
+
+  color: #fff;
+
+}
+
+.App .input p {
+  background-color: #1363df;
+  border: transparent;
+  height: 100%;
+  width: 15%;
+  padding: 10px 40px;
+  color: #fff;
+  font-weight: 400;
+  border: 1px solid rgba(0, 49, 83, 1);
+  font-size: 17px;
+
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.App .todolist {
+  min-height: 100px;
+  background-color: hsl(235, 24%, 19%);
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.trashicon,
+.editicon {
+  color: #fff;
+  padding: 6px;
+  font-size: 23px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.editicon {
+  background-color: #1363df;
+}
+
+.todocomplete{
+  color: hsl(233, 14%, 35%);
+  text-decoration: line-through;
+}
+.trashicon {
+  background-color: red;
+
+}
+
+.todocontain {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid hsl(233, 14%, 35%);
+  padding-top: 10px;
+  color: #fff;
+}
+.todopara {
+    max-width: 80%;
+  display: flex;
+  gap: 10px;
+
+}
+
+
+input[type="checkbox"] {
+  /* Hide the default checkbox */
+  cursor: pointer;
+  border: none;
+  outline: 0;
+  border-radius: 5px;
+  position: relative;
+}
+
+/* Simulate custom checkbox */
+input[type="checkbox"]::before {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: #939393; /* Default background color */
+  border: 1px solid transparent;
+  position: absolute;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+}
+
+/* Change background color when checkbox is checked */
+input[type="checkbox"]:checked::before {
+  background-color: #1363df; /* Your desired background color */
+  border-radius: 10px;
+  
+
+
+}
+
+
+input[type="checkbox"]:checked::after {
+  content: '\2713'; /* Checkmark Unicode character */
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  
+
+
+}
+
+
+.todopara .inputdiv input{
+  width: 100%;
+}
+
+.todopara p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: italic;
+  padding: 0;
+  margin: 0; 
+  word-break: break-word; 
+
+}
+.icons{
+  padding-bottom: 10px;
+  display: flex;
+gap: 2px 6px;  
+justify-content: center;
+flex-wrap: nowrap;
+
+}
+
+
+
+
+.todopadding{
+  padding: 0 15px;
+}
+.footer{
+  border: 1px solid hsl(233, 14%, 35%);
+  border-color: hsl(233, 14%, 35%) transparent transparent;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.footer .cleartodo , .todoleft,span{
+  font-size: 13px;
+    font-weight: bold;
+    color: #a7a7a7;
+}
+.footer .cleartodo{
+  cursor: pointer;
+
+}
+
+
+
+
+@media (max-width:340px){
+  .footer{
+  border: 1px solid hsl(233, 14%, 35%);
+  border-color: hsl(233, 14%, 35%) transparent transparent;
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+}
+}
+@media (max-width:420px){
+.choise{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+}
+@media (min-width:420px){
+.choise{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+}
+span{
+  cursor: pointer;
+}
+.activechoise{
+  color: #47b5ff ;
+}
+.stopclick{
+  pointer-events: none;
+}
+::selection {
+  color: white;
+  background: hsl(233, 14%, 35%);
+  }
