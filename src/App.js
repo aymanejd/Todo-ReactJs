@@ -15,7 +15,7 @@ function App() {
   const todo = useRef('')
   const [itemsleft, setitemsleft] = useState();
 
-  const todostate= [{ state: 'all', id: '1' }, { state: 'active', id: '2' }, { state: 'Completed', id: '3' }]
+  const todostate = [{ state: 'all', id: '1' }, { state: 'active', id: '2' }, { state: 'Completed', id: '3' }]
   const [selectchoise, setselectchoise] = useState('1')
   const [fltertodo, setfiltertodo] = useState([]);
   useEffect(() => {
@@ -23,7 +23,7 @@ function App() {
     setitemsleft(todolist.length);
 
   }, [todolist]);
- 
+
 
   function addtodo() {
     const newTodo = todo.current.value;
@@ -33,7 +33,7 @@ function App() {
       const todoExists = todolist.find((elt) => elt.todovalue === newTodo);
 
       if (todoExists) {
-        toast.error('Todo ealready exists', {
+        toast.error('Todo already exists', {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -44,7 +44,7 @@ function App() {
           theme: "colored",
         });
         todo.current.value = '';
-       
+
 
       }
       else {
@@ -111,7 +111,7 @@ function App() {
           setselectchoise('1')
           setfiltertodo([])
           if (todoExists) {
-            toast.error('Todo ealready exists', {
+            toast.error('Todo already exists', {
               position: "top-right",
               autoClose: 2000,
               hideProgressBar: false,
@@ -138,7 +138,7 @@ function App() {
   }
   function todocomplete(id) {
     settodolist(todolist.map((elt) => elt.id == id ? { ...elt, completed: !elt.completed } : elt))
-    
+
     setfiltertodo([])
     setselectchoise('1')
 
@@ -195,8 +195,6 @@ function App() {
       setselectchoise(e);
       setfiltertodo([]);
       setitemsleft(todolist.length);
-
-
     }
   }
 
@@ -230,7 +228,7 @@ function App() {
               <div key={elt.id} className='todocontain'>
                 <div className='todopara'>
                   <div className='inputdiv'  >
-                    <input 
+                    <input
                       onChange={() => todocomplete(elt.id)} style={{ cursor: 'pointer' }}
                       type='checkbox' checked={elt.completed} />
                   </div>
